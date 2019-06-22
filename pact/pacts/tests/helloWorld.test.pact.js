@@ -1,9 +1,12 @@
+require('dotenv').config()
+
 const { Pact } = require('@pact-foundation/pact');
 // const { api } require(/* wherever */);   // This is your client-side API layer
 const axios = require('axios');
 
+const URL = `${process.env.PACT_HOST}:${process.env.PACT_PORT}`;
+console.log('URL', URL)
 describe('The API', () => {
-  let url = 'http://localhost:8989';
 
   // Copy this block once per interaction under test
   describe('Companies'/* The API interaction being tested in words (string) */, () => {
@@ -33,7 +36,7 @@ describe('The API', () => {
 
     // add expectations
     it('returns a company', done => {
-      axios.get(`${url}/companies/1`, {
+      axios.get(`${URL}/companies/1`, {
         headers: {
           'Accept': 'application/json',
         }
