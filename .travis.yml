@@ -4,6 +4,8 @@ node_js:
 cache:
   directories:
   - node_modules
+before_install:
+  - mv .env.travis .env
 jobs:
     include:
       - stage: test
