@@ -13,12 +13,14 @@ before_install:
 jobs:
     include:
       - stage: test
+        script: yarn test
         script: yarn pact:test
       - stage: publish
         script: yarn pact:publish
       - stage: deploy
         deploy:
           provider: heroku
+          script: skip
           api_key:
             secure: "aME5OeRVr+mRbKL0hQai+bmvtX0phhwBnFnGTiPNe0Y89YAKaCeDYzD7G8limsV4HA7ElT7PLHZ1McDB21qGfMTS2Wf/DcI7uyGNpMAXMfXEmbaksGfFomjXVRVSAU8FpE0yhC9IF2rwXqRvoqJ231xrN53yNJaKt3CLIp8btKr6UZukKW+ntOpxG3v0f/TsO1Nvn2Y4+Y7BuA25/mQucvTKEnBVAWvYhlukRUJux3y55u6rjXFFajSbNrV+0JGjFuxsySxFozfmw9DWEHvcMaAmyG2VDoyi0CsAXUTXHH4//GPl//aYRNIWtdp+UIK0OsO9adazQDCgh6JYV09U5xmRiFUucoGXBT3Pv6i9vRPdelgHf40EoPVTBBdarG2FWBPTT2hDTgUyDAKKaZEtNeD0Nmbux1RkmFWuYlmV7qSQ6LJG+BMEQCogEyi/6waysflU+Tc4bv35T5IV84CtFXMRPimKBats+Db+lHgiEE3o511djQ8iLxivdH/ebqgGScTj+LmZer7kZ2a36fjsjO2mETQeklmI+NuLYR6gNF813Z3j5LSkshIm3cnMpk954mfcVjQlz6No7AK++K/PzTgXnPMalRWhY8nW2DUcbnjudoRE0WmDhhmgwLvT74NiF19wWT4UutZr0iI3layJMe+HqFtEM+0qdaILC2eYUkY="
           app: eq-test-case-manager-ui
