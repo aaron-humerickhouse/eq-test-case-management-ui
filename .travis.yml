@@ -1,28 +1,34 @@
 language: node_js
+
 node_js:
 - stable
+
 cache:
   directories:
   - node_modules
+
 before_install:
   - mv .env.travis .env
+
 jobs:
     include:
       - stage: test
         script: yarn pact:test
       - stage: publish
         script: yarn pact:publish
-      - stage: deploy
-        provider: heroku
-        api_key:
-          secure: "aME5OeRVr+mRbKL0hQai+bmvtX0phhwBnFnGTiPNe0Y89YAKaCeDYzD7G8limsV4HA7ElT7PLHZ1McDB21qGfMTS2Wf/DcI7uyGNpMAXMfXEmbaksGfFomjXVRVSAU8FpE0yhC9IF2rwXqRvoqJ231xrN53yNJaKt3CLIp8btKr6UZukKW+ntOpxG3v0f/TsO1Nvn2Y4+Y7BuA25/mQucvTKEnBVAWvYhlukRUJux3y55u6rjXFFajSbNrV+0JGjFuxsySxFozfmw9DWEHvcMaAmyG2VDoyi0CsAXUTXHH4//GPl//aYRNIWtdp+UIK0OsO9adazQDCgh6JYV09U5xmRiFUucoGXBT3Pv6i9vRPdelgHf40EoPVTBBdarG2FWBPTT2hDTgUyDAKKaZEtNeD0Nmbux1RkmFWuYlmV7qSQ6LJG+BMEQCogEyi/6waysflU+Tc4bv35T5IV84CtFXMRPimKBats+Db+lHgiEE3o511djQ8iLxivdH/ebqgGScTj+LmZer7kZ2a36fjsjO2mETQeklmI+NuLYR6gNF813Z3j5LSkshIm3cnMpk954mfcVjQlz6No7AK++K/PzTgXnPMalRWhY8nW2DUcbnjudoRE0WmDhhmgwLvT74NiF19wWT4UutZr0iI3layJMe+HqFtEM+0qdaILC2eYUkY="
-        app: eq-test-case-manager-ui
+
 stages:
   - test
   - name: publish
     if: branch = master
-  - name: deploy
-    if: branch = master
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: "aME5OeRVr+mRbKL0hQai+bmvtX0phhwBnFnGTiPNe0Y89YAKaCeDYzD7G8limsV4HA7ElT7PLHZ1McDB21qGfMTS2Wf/DcI7uyGNpMAXMfXEmbaksGfFomjXVRVSAU8FpE0yhC9IF2rwXqRvoqJ231xrN53yNJaKt3CLIp8btKr6UZukKW+ntOpxG3v0f/TsO1Nvn2Y4+Y7BuA25/mQucvTKEnBVAWvYhlukRUJux3y55u6rjXFFajSbNrV+0JGjFuxsySxFozfmw9DWEHvcMaAmyG2VDoyi0CsAXUTXHH4//GPl//aYRNIWtdp+UIK0OsO9adazQDCgh6JYV09U5xmRiFUucoGXBT3Pv6i9vRPdelgHf40EoPVTBBdarG2FWBPTT2hDTgUyDAKKaZEtNeD0Nmbux1RkmFWuYlmV7qSQ6LJG+BMEQCogEyi/6waysflU+Tc4bv35T5IV84CtFXMRPimKBats+Db+lHgiEE3o511djQ8iLxivdH/ebqgGScTj+LmZer7kZ2a36fjsjO2mETQeklmI+NuLYR6gNF813Z3j5LSkshIm3cnMpk954mfcVjQlz6No7AK++K/PzTgXnPMalRWhY8nW2DUcbnjudoRE0WmDhhmgwLvT74NiF19wWT4UutZr0iI3layJMe+HqFtEM+0qdaILC2eYUkY="
+  app: eq-test-case-manager-ui
+  on: master
+  
 env:
   global:
     - secure: xoJpbUEDI+RbPIJPLGl1a2WIOPdUm6bhDjIHpfWpj/FP3gke4HCGEFUizBjdWcIj2KwAR5+W5omzkHlc3KJoXPghHJxeen8wSISPIo0Lv1x4UYatPgR37nFLtb+OiSQAv2rqXjqvkW0SRxsX/OZKud8m5AoEZnFcEjlnJQD5P2voT5NLTdMxe/0pbjHJJ11jmCVIKzt54fCRxC3soMrnikKtUOan9MYrqymwFtjY2qS4eLNIrHDnrmBshCToB0JEPjbkmWkixFrpnEV/Jh2aQfOy/RQwwAHNF31Wwrr1JSTu6UBNNFIbBF/Nudxg96VR4w0MmoVyqTrUhIu0FW5jETIJWnQZm27oLaSdPbpwYUCW+1T+tpN3sJsBiveGCi66+vzsefVWpzcudd2q6cPmNr+Wf7qdFT7Apdr7nLDeo1PXAF+x7gskziBvs5JIa0ygg+oxeyfqmL2U2kqZ1AryBqngqaLywWGZQZCSqehf0suyiKXqEV9cXd7EYm86lujLErYZyWBthZBO7DCgx+RuDqehKuvy6W0q/JUEtKpVesDEkJdcNqMYfXjPGN+2DFLZmOREv87cZdHjL1a+xgusMCYwNLF9vRRhcBTvyNwqB3bI/vacGFc3YS5psxAjlwUHhLaIM2cn676o0+THAZTtUBnxrYH69uboDvffD19BzT4=
