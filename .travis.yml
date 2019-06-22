@@ -4,6 +4,8 @@ node_js:
 cache:
   directories:
   - node_modules
+before_install:
+  - mv .env.travis .env
 jobs:
     include:
       - stage: test
@@ -17,6 +19,3 @@ stages:
 env:
   global:
     - secure: xoJpbUEDI+RbPIJPLGl1a2WIOPdUm6bhDjIHpfWpj/FP3gke4HCGEFUizBjdWcIj2KwAR5+W5omzkHlc3KJoXPghHJxeen8wSISPIo0Lv1x4UYatPgR37nFLtb+OiSQAv2rqXjqvkW0SRxsX/OZKud8m5AoEZnFcEjlnJQD5P2voT5NLTdMxe/0pbjHJJ11jmCVIKzt54fCRxC3soMrnikKtUOan9MYrqymwFtjY2qS4eLNIrHDnrmBshCToB0JEPjbkmWkixFrpnEV/Jh2aQfOy/RQwwAHNF31Wwrr1JSTu6UBNNFIbBF/Nudxg96VR4w0MmoVyqTrUhIu0FW5jETIJWnQZm27oLaSdPbpwYUCW+1T+tpN3sJsBiveGCi66+vzsefVWpzcudd2q6cPmNr+Wf7qdFT7Apdr7nLDeo1PXAF+x7gskziBvs5JIa0ygg+oxeyfqmL2U2kqZ1AryBqngqaLywWGZQZCSqehf0suyiKXqEV9cXd7EYm86lujLErYZyWBthZBO7DCgx+RuDqehKuvy6W0q/JUEtKpVesDEkJdcNqMYfXjPGN+2DFLZmOREv87cZdHjL1a+xgusMCYwNLF9vRRhcBTvyNwqB3bI/vacGFc3YS5psxAjlwUHhLaIM2cn676o0+THAZTtUBnxrYH69uboDvffD19BzT4=
-    - PACT_BROKER_USERNAME: admin
-    - PACT_BROKER_URL: https://eq-pact-broker.herokuapp.com/
-
