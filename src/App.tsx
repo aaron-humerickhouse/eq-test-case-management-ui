@@ -19,7 +19,7 @@ const App: React.FC = () => {
           Learn React
         </a>
         <p>
-          Testing Auto-Deploy
+          Testing Auto-Deploy as a Stage
         </p>
       </header>
     </div>
