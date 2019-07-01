@@ -175,6 +175,136 @@
           }
         }
       }
+    },
+    {
+      "description": "Update Company",
+      "providerState": "With a company with id of 1",
+      "request": {
+        "method": "PUT",
+        "path": "/companies/1",
+        "query": "",
+        "headers": {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "id": 1,
+          "name": "Pact"
+        },
+        "matchingRules": {
+          "$.body": {
+            "match": "type"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "id": 1,
+          "name": "Pact"
+        },
+        "matchingRules": {
+          "$.body.id": {
+            "match": "type"
+          }
+        }
+      }
+    },
+    {
+      "description": "Get Company",
+      "providerState": "With a company with id of 1",
+      "request": {
+        "method": "GET",
+        "path": "/companies/1",
+        "query": "",
+        "headers": {
+          "Accept": "application/json"
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "id": 1,
+          "name": "ACME Corp"
+        },
+        "matchingRules": {
+          "$.body.id": {
+            "match": "type"
+          }
+        }
+      }
+    },
+    {
+      "description": "Get Companies",
+      "providerState": "Having a company",
+      "request": {
+        "method": "GET",
+        "path": "/companies",
+        "query": "",
+        "headers": {
+          "Accept": "application/json"
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": [
+          {
+            "id": 1,
+            "name": "ACME Corp"
+          }
+        ],
+        "matchingRules": {
+          "$.body": {
+            "min": 1
+          },
+          "$.body[*].*": {
+            "match": "type"
+          }
+        }
+      }
+    },
+    {
+      "description": "Create Company",
+      "request": {
+        "method": "POST",
+        "path": "/companies",
+        "headers": {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "name": "Pact"
+        },
+        "matchingRules": {
+          "$.body": {
+            "match": "type"
+          }
+        }
+      },
+      "response": {
+        "status": 201,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "id": 1,
+          "name": "Pact"
+        },
+        "matchingRules": {
+          "$.body": {
+            "match": "type"
+          }
+        }
+      }
     }
   ],
   "metadata": {

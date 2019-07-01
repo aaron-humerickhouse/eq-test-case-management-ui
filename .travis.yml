@@ -15,6 +15,7 @@ jobs:
       - stage: test
         script: yarn test
         script: yarn pact:test
+        # TODO: s3 bucket in travis to get pact file
       - stage: publish
         script: yarn pact:publish
       - stage: deploy
