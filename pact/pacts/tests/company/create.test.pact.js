@@ -6,7 +6,6 @@ describe('The API', () => {
   describe('Companies'/* The API interaction being tested in words (string) */, () => {
     beforeEach(() => {
       const interaction = {
-        state: "Having no company with the name 'Pact'",
         uponReceiving: 'Create Company'/* Describe the request in words (string) */,
         withRequest: {
           method:  'POST',
