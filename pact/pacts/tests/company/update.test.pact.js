@@ -50,7 +50,7 @@ describe('The API', () => {
           expect(response.data).toEqual(
             /* check the response here, using the default values provided to the Pact DSL */
             { id: 1, name: "Pact" }
-            );
+          );
         })
         .then(done);
     });

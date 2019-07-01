@@ -45,7 +45,7 @@ describe('The API', () => {
             [
               { id: 1, name: "ACME Corp" }
             ]
-            );
+          );
         })
         .then(done);
     });
