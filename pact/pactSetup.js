@@ -8,7 +8,7 @@ global.provider = new Pact({
   dir: path.resolve(process.cwd(), 'pact', 'pacts'),
   spec: 2,
   cors: true,
-  pactfileWriteMode: 'update',
+  pactfileWriteMode: 'overwrite',
   consumer: 'EQ - TCM UI',
   provider: 'EQ - TCM Server'
 });

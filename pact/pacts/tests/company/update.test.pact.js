@@ -25,7 +25,7 @@ describe('The API', () => {
         willRespondWith: {
           status: 200,
           headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json; charset=utf-8'
             /* etc */
           },
           body: { id: Matchers.like(1), name: "Pact" }/* describe the body (object using the Pact DSL)*/
@@ -41,7 +41,7 @@ describe('The API', () => {
         {
           headers: {
             'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json; charset=utf-8'
          }
         }
       )
