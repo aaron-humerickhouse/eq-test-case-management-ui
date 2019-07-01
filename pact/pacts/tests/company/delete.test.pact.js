@@ -18,11 +18,7 @@ describe('The API', () => {
           }
         },
         willRespondWith: {
-          status: 204,
-          headers: {
-            'Content-Type': 'application/json; charset=utf-8'
-            /* etc */
-          }
+          status: 204
         }
       };
       return provider.addInteraction(interaction);
