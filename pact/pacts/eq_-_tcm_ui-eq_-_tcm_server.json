@@ -148,7 +148,7 @@
           "name": "ACME Corp"
         },
         "matchingRules": {
-          "$.body.id": {
+          "$.body": {
             "match": "type"
           }
         }

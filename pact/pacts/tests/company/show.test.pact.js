@@ -23,7 +23,7 @@ describe('The API', () => {
             'Content-Type': 'application/json; charset=utf-8'
             /* etc */
           },
-          body: { id: Matchers.like(1), name: "ACME Corp" }/* describe the body (object using the Pact DSL)*/
+          body: Matchers.like({ id: 1, name: "ACME Corp" })/* describe the body (object using the Pact DSL)*/
         }
       };
       return provider.addInteraction(interaction);
