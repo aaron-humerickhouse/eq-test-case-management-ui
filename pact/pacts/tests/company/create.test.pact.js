@@ -35,7 +35,7 @@ describe('The API', () => {
         {
           headers: {
             'Accept': 'application/json',
-            'Content-Type': 'application/json; charset=utf-8'
+            'Content-Type': 'application/json'
           },
           body: {
             name: 'Pact'
