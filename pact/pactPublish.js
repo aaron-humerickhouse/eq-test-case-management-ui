@@ -7,7 +7,7 @@ let opts = {
   pactBroker: process.env.PACT_BROKER_URL,
   pactBrokerUsername: process.env.PACT_BROKER_USERNAME,
   pactBrokerPassword: process.env.PACT_BROKER_PASSWORD,
-  consumerVersion: '0.0.1'
+  consumerVersion: process.env.TRAVIS_PULL_REQUEST_SHA
 };
 
 pact.publishPacts(opts).then(function () {
