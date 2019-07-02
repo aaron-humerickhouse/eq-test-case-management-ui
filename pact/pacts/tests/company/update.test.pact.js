@@ -10,7 +10,7 @@ describe('The API', () => {
         uponReceiving: 'Update Company'/* Describe the request in words (string) */,
         withRequest: {
           method:  'PUT'/* 'GET' or 'POST' or whatever (string) */,
-          path:  '/companies/1'/* '/foo/bar' (string) */,
+          path:  '/api/v1/companies/1'/* '/foo/bar' (string) */,
           query:  ''/* '?query=parameters' (string) */,
           headers: {
             'Accept': 'application/json',
@@ -36,7 +36,7 @@ describe('The API', () => {
 
     // add expectations
     it('returns a company', done => {
-      axios.put(`${URL}/companies/1`, 
+      axios.put(`${URL}/api/v1/companies/1`, 
         { id: 1, name: 'Pact' },
         {
           headers: {

@@ -11,7 +11,7 @@
       "providerState": "Having a company",
       "request": {
         "method": "GET",
-        "path": "/companies",
+        "path": "/api/v1/companies",
         "query": "",
         "headers": {
           "Accept": "application/json"
@@ -43,7 +43,7 @@
       "providerState": "With a company with id of 1",
       "request": {
         "method": "PUT",
-        "path": "/companies/1",
+        "path": "/api/v1/companies/1",
         "query": "",
         "headers": {
           "Accept": "application/json",
@@ -80,7 +80,7 @@
       "providerState": "With a company with id of 1",
       "request": {
         "method": "DELETE",
-        "path": "/companies/1",
+        "path": "/api/v1/companies/1",
         "query": "",
         "headers": {
           "Accept": "application/json"
@@ -96,7 +96,7 @@
       "description": "Create Company",
       "request": {
         "method": "POST",
-        "path": "/companies",
+        "path": "/api/v1/companies",
         "headers": {
           "Accept": "application/json",
           "Content-Type": "application/json"
@@ -131,7 +131,7 @@
       "providerState": "With a company with id of 1",
       "request": {
         "method": "GET",
-        "path": "/companies/1",
+        "path": "/api/v1/companies/1",
         "query": "",
         "headers": {
           "Accept": "application/json"

@@ -10,7 +10,7 @@ describe('The API', () => {
         uponReceiving: 'Delete Company'/* Describe the request in words (string) */,
         withRequest: {
           method:  'DELETE'/* 'GET' or 'POST' or whatever (string) */,
-          path:  '/companies/1'/* '/foo/bar' (string) */,
+          path:  '/api/v1/companies/1'/* '/foo/bar' (string) */,
           query:  ''/* '?query=parameters' (string) */,
           headers: {
             'Accept': 'application/json',
@@ -26,7 +26,7 @@ describe('The API', () => {
 
     // add expectations
     it('returns a company', done => {
-      axios.delete(`${URL}/companies/1`, {
+      axios.delete(`${URL}/api/v1/companies/1`, {
         headers: {
           'Accept': 'application/json',
         }

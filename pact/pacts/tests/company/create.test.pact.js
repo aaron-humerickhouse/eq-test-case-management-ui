@@ -9,7 +9,7 @@ describe('The API', () => {
         uponReceiving: 'Create Company'/* Describe the request in words (string) */,
         withRequest: {
           method:  'POST',
-          path:  '/companies',
+          path:  '/api/v1/companies',
           headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
@@ -30,7 +30,7 @@ describe('The API', () => {
 
     // add expectations
     it('returns the newly created company', done => {
-      axios.post(`${URL}/companies`, 
+      axios.post(`${URL}/api/v1/companies`, 
         {name: 'Pact'},
         {
           headers: {

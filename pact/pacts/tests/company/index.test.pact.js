@@ -10,7 +10,7 @@ describe('The API', () => {
         uponReceiving: 'Get Companies'/* Describe the request in words (string) */,
         withRequest: {
           method:  'GET'/* 'GET' or 'POST' or whatever (string) */,
-          path:  '/companies'/* '/foo/bar' (string) */,
+          path:  '/api/v1/companies'/* '/foo/bar' (string) */,
           query:  ''/* '?query=parameters' (string) */,
           headers: {
             'Accept': 'application/json',
@@ -33,7 +33,7 @@ describe('The API', () => {
 
     // add expectations
     it('returns a an array of companies', done => {
-      axios.get(`${URL}/companies`, {
+      axios.get(`${URL}/api/v1/companies`, {
         headers: {
           'Accept': 'application/json',
         }
